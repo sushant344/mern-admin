@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
 
   // store token in localStorage --
   const storeTokeninLS = (serverToken) => {
-    setToken(serverToken)
+    setToken(serverToken);
     return localStorage.setItem("mernToken", serverToken);
   };
 
@@ -24,6 +24,7 @@ export const AuthProvider = ({ children }) => {
   // onclick logout btn remove token ---
   const logoutUser = () => {
     setToken("");
+    setUser(null);
     return localStorage.removeItem("mernToken");
   };
 

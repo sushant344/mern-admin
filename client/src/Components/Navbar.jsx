@@ -43,7 +43,7 @@ const Navbar = () => {
               </>
             }
             {
-              (isLoggedin && user.isAdmin) && 
+              (isLoggedin && user?.isAdmin) && 
               <li> <NavLink onClick={closeMenu} to="/admin/users" className="admin-btn">Admin</NavLink> </li>
             }
           </ul>
