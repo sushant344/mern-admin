@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const User = require("../Model/user");
 
+// get jwt token from user machine and verify with secret key ---
 const authMiddleware = async (req, res, next) => {
     const token = req.header("Authorization");
 

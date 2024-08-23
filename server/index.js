@@ -14,9 +14,10 @@ const PORT = process.env.PORT || 8000;
 // cors integration --
 const allowedOrigins = [
     "http://localhost:5173",  // Local development
-    process.env.Netlify_URI   // Netlify deployment
+    process.env.Netlify_URI,   // Netlify deployment URI or production hosted URI
 ];
 
+// cors handles request get by which frontend URIs --
 const corsOptions = {
     origin: function (origin, callback) {
         if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
@@ -33,17 +34,21 @@ app.use(cors(corsOptions));
 
 app.use(express.json())
 
+// It only testing purpose to check backend connection --
 app.get("/", (req, res)=>{
     res.status(200).json({msg: "Welcome to home"})
 })
 
 
+// api routers --
 app.use("/api", userRouter);
 app.use("/api/form", contactRouter);
 app.use("/api/data", serviceRouter);
 app.use("/api/admin", adminRouter);
-app.use(errorMiddleware);
+app.use(errorMiddleware);   // handle errors 
 
+
+// db connection --
 connectDB().then(()=>{
     app.listen(PORT, ()=> `Server started at ${PORT}`)
 })

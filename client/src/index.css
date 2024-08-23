@@ -694,4 +694,21 @@ body tr {
       }
     }
   }
+  .section-analytics {
+    & .grid{
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 2rem;
+
+      & .div1{
+        border: 0;
+      }
+    }
+  }
+  .admin-users{
+    overflow-x: scroll;
+  }
+  th, td{
+    width: auto;
+  }
 }

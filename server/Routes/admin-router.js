@@ -5,6 +5,7 @@ const adminMiddleware = require("../middlewares/admin-middleware");
 
 const Router = express.Router();
 
+// if logged in user is admin then only can access following data --
 Router.route("/users").get(authMiddleware, adminMiddleware, controller.getAllUsers);
 Router.route("/users/:id").get(authMiddleware, adminMiddleware, controller.getUserById);
 Router.route("/users/update/:id").patch(authMiddleware, adminMiddleware, controller.updateUserById);

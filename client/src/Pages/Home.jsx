@@ -4,7 +4,7 @@ import { useAuth } from "../store/auth";
 
 const Home = () => {
   const { user } = useAuth();
-
+  
   return (
     <>
       <main>

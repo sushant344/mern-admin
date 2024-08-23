@@ -1,5 +1,6 @@
 const { z } = require("zod");
 
+// zod validation to handle inputs validation --
 const loginSchema = z.object({
   email: z
     .string({ required_error: "Email is required" })
@@ -29,6 +30,8 @@ const signupSchema = loginSchema.extend({
     .max(20, { message: "Phone must be atleast 20 characters" }),
 
 });
+
+
 
 module.exports = {
   signupSchema,

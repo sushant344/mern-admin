@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <header>
+    <header className="main-menu">
       <div className="container">
         <div className="logo-brand">
           <NavLink to="/">MERN eduTech</NavLink>

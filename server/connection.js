@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 
+// mongodb srv db url --
 const URI = process.env.MONGO_URI;
 
 const connectDB = async () =>{

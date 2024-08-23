@@ -1,3 +1,4 @@
+// check if logged in user is abmin or not --
 const adminMiddleware = async(req, res, next)=>{
     try {
         const adminRole = req.user.isAdmin;

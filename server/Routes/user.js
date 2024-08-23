@@ -6,6 +6,7 @@ const express = require("express");
 
 const Router = express.Router();
 
+// calling validate function to handle inputs validation by using zod --
 Router.route("/register").post(validate(signupSchema), controller.register);
 Router.route("/login").post(validate(loginSchema), controller.login);
 Router.route("/user").get(authMiddleware, controller.user);

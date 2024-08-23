@@ -4,6 +4,7 @@ const contact = async(req, res)=>{
     try {
         const response = req.body;
         const data = await Contact.create(response);
+        console.log("contact data:", response)
 
         if(!data){
             return res.status(401).json({ msg: "Error while sending message, Try again" })

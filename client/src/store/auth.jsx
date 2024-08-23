@@ -5,11 +5,12 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("mernToken"));
-  const [user, setUser] = useState();
+  const [user, setUser] = useState("");
   const [services, setServices] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const authUserToken = `Bearer ${token}`;
 
+  // server localhost URI or hosted backedn URI --
   const API = import.meta.env.VITE_APP_API_URI;
 
   // store token in localStorage --
