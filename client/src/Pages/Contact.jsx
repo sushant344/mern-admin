@@ -50,9 +50,6 @@ const Contact = () => {
 
       // const resData = await response.json();
       if(response.ok){
-        setContact({
-          message: ""
-        });
         toast.success("Message sent")
       }else{
         toast.error("Error!! message not sent");
