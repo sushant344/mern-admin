@@ -8,7 +8,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   if(isLoading){
-    return <h1>Loading...</h1>
+    return null;
   }
 
   const toggleMenu = () => {

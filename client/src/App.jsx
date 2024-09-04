@@ -15,8 +15,20 @@ import AdminUsers from "./Pages/AdminUsers";
 import AdminContacts from "./Pages/AdminContacts";
 import AdminServices from "./Pages/AdminServices";
 import AdminUpdate from "./Pages/AdminUpdate";
+import { useAuth } from "./store/auth";
+
+const styled = {
+  display: "flex", 
+  alignItems: "center", 
+  justifyContent: "center", 
+  height: "100vh"
+}
 
 const App = () => {
+  const { isLoading } = useAuth();
+  if(isLoading){
+    return <h1 style={styled}>Loading...</h1>;
+  }
   return (
     <Router>
       <Navbar />

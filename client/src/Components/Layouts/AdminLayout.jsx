@@ -7,7 +7,7 @@ const AdminLayout = () => {
   const { user, isLoading } = useAuth();
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <h1>Loading...</h1>
   }
 
   if (!user?.isAdmin) {
